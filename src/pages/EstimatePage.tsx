@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Box,
   Container,
@@ -89,34 +89,25 @@ const EstimatePage: React.FC = () => {
     }));
   };
 
-  const calculateSubtotal = () => {
-    let subtotal = 0;
-    Object.entries(selectedItems).forEach(([itemId, quantity]) => {
-      const item = items.find((i) => i.id === itemId);
-      if (item) {
-        subtotal += item.price * quantity;
-      }
-    });
-    return subtotal;
-  };
-
-  const calculateOptionsTotal = () => {
-    let total = 0;
-    Object.entries(selectedOptions).forEach(([optionId, isSelected]) => {
-      if (isSelected) {
-        const option = options.find((o) => o.id === optionId);
-        if (option) {
-          total += option.price;
-        }
-      }
-    });
-    return total;
-  };
-
   const basePrice = 4400;
-  const itemsSubtotal = calculateSubtotal();
-  const optionsTotal = calculateOptionsTotal();
-  const total = basePrice + itemsSubtotal + optionsTotal;
+  const itemsSubtotal = useMemo(() => {
+    return Object.entries(selectedItems).reduce((total, [itemId, quantity]) => {
+      const item = items.find((i) => i.id === itemId);
+      return total + (item ? item.price * quantity : 0);
+    }, 0);
+  }, [selectedItems]);
+
+  const optionsTotal = useMemo(() => {
+    return Object.entries(selectedOptions).reduce((total, [optionId, isSelected]) => {
+      if (!isSelected) return total;
+      const option = options.find((o) => o.id === optionId);
+      return total + (option ? option.price : 0);
+    }, 0);
+  }, [selectedOptions]);
+
+  const total = useMemo(() => {
+    return basePrice + itemsSubtotal + optionsTotal;
+  }, [basePrice, itemsSubtotal, optionsTotal]);
 
   const handleLineRequest = () => {
     const selectedItemsText = Object.entries(selectedItems)
@@ -292,7 +283,7 @@ ${selectedOptionsText}
             ))}
           </Box>
 
-          <Paper sx={{ p: 4, position: 'sticky', top: 24 }}>
+          <Paper sx={{ p: 4, mt: 4 }}>
             <Typography variant="h5" gutterBottom sx={{ fontWeight: 600 }}>
               お客様情報
             </Typography>
