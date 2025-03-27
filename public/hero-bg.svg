@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景グラデーション -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1920" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#000000"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)"/>
+  
+  <!-- 抽象的な回路パターン -->
+  <g stroke="#ffffff" stroke-width="1" opacity="0.1">
+    <!-- 水平線 -->
+    <line x1="0" y1="200" x2="1920" y2="200"/>
+    <line x1="0" y1="400" x2="1920" y2="400"/>
+    <line x1="0" y1="600" x2="1920" y2="600"/>
+    <line x1="0" y1="800" x2="1920" y2="800"/>
+    
+    <!-- 垂直線 -->
+    <line x1="200" y1="0" x2="200" y2="1080"/>
+    <line x1="400" y1="0" x2="400" y2="1080"/>
+    <line x1="600" y1="0" x2="600" y2="1080"/>
+    <line x1="800" y1="0" x2="800" y2="1080"/>
+    <line x1="1000" y1="0" x2="1000" y2="1080"/>
+    <line x1="1200" y1="0" x2="1200" y2="1080"/>
+    <line x1="1400" y1="0" x2="1400" y2="1080"/>
+    <line x1="1600" y1="0" x2="1600" y2="1080"/>
+    
+    <!-- 接続点 -->
+    <circle cx="200" cy="200" r="2"/>
+    <circle cx="400" cy="200" r="2"/>
+    <circle cx="600" cy="200" r="2"/>
+    <circle cx="800" cy="200" r="2"/>
+    <circle cx="1000" cy="200" r="2"/>
+    <circle cx="1200" cy="200" r="2"/>
+    <circle cx="1400" cy="200" r="2"/>
+    <circle cx="1600" cy="200" r="2"/>
+    
+    <circle cx="200" cy="400" r="2"/>
+    <circle cx="400" cy="400" r="2"/>
+    <circle cx="600" cy="400" r="2"/>
+    <circle cx="800" cy="400" r="2"/>
+    <circle cx="1000" cy="400" r="2"/>
+    <circle cx="1200" cy="400" r="2"/>
+    <circle cx="1400" cy="400" r="2"/>
+    <circle cx="1600" cy="400" r="2"/>
+    
+    <circle cx="200" cy="600" r="2"/>
+    <circle cx="400" cy="600" r="2"/>
+    <circle cx="600" cy="600" r="2"/>
+    <circle cx="800" cy="600" r="2"/>
+    <circle cx="1000" cy="600" r="2"/>
+    <circle cx="1200" cy="600" r="2"/>
+    <circle cx="1400" cy="600" r="2"/>
+    <circle cx="1600" cy="600" r="2"/>
+    
+    <circle cx="200" cy="800" r="2"/>
+    <circle cx="400" cy="800" r="2"/>
+    <circle cx="600" cy="800" r="2"/>
+    <circle cx="800" cy="800" r="2"/>
+    <circle cx="1000" cy="800" r="2"/>
+    <circle cx="1200" cy="800" r="2"/>
+    <circle cx="1400" cy="800" r="2"/>
+    <circle cx="1600" cy="800" r="2"/>
+  </g>
+  
+  <!-- 抽象的な波形 -->
+  <path d="M0,540 Q480,440 960,540 T1920,540" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.05"/>
+  <path d="M0,540 Q480,640 960,540 T1920,540" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.05"/>
+  
+  <!-- 光の粒子 -->
+  <g opacity="0.1">
+    <circle cx="200" cy="300" r="1" fill="#ffffff"/>
+    <circle cx="400" cy="450" r="1" fill="#ffffff"/>
+    <circle cx="600" cy="200" r="1" fill="#ffffff"/>
+    <circle cx="800" cy="600" r="1" fill="#ffffff"/>
+    <circle cx="1000" cy="350" r="1" fill="#ffffff"/>
+    <circle cx="1200" cy="500" r="1" fill="#ffffff"/>
+    <circle cx="1400" cy="250" r="1" fill="#ffffff"/>
+    <circle cx="1600" cy="400" r="1" fill="#ffffff"/>
+  </g>
+</svg> 
